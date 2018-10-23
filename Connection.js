@@ -1,3 +1,6 @@
+//https://stackoverrun.com/ko/q/12537447
+//참고주소
+
 const sql = require('mssql'); 
 var dbConfig = { 
     server:'서버아이피', 
@@ -9,10 +12,20 @@ var dbConfig = {
 
 sql.connect(dbConfig).then(pool => { 
     // Query  
-    return pool.request() 
-    .query('select * from tbMngAccount') 
+    return pool.request().query('select * from tbMngAccount') 
 }).then(result => { 
     console.log(result); 
 }).catch(err => { 
     // ... error checks 
 }) 
+
+
+sql.connect(dbConfig).then(pool=>{
+    return pool.request().query('select * from tbMngAccount')
+}).then
+(result=>{
+    console.log(result);
+})
+.catch(err=>{
+
+})
